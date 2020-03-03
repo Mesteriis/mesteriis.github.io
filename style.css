@@ -11,9 +11,15 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 display:block;
 }
 
-html, body {background: #181818; font-family: 'Montserrat', helvetica, arial, sans-serif; font-size: 16px; color: #222;}
+html, body {
+	background: hsl(0, 0%, 9%);
+	font-family: 'Montserrat',
+	helvetica, arial, sans-serif;
+	font-size: 16px;
+	color: hsl(0, 0%, 13%);
+}
 
-.tmp {
+.indentation {
 	margin-top:5px;
 }
 .softSkills{
@@ -26,6 +32,17 @@ html, body {background: #181818; font-family: 'Montserrat', helvetica, arial, sa
 	color: #444;
 }
 
+
+
+.footer{
+	width: 100%;
+	max-width: 800px;
+	background-color: hsla(162, 4%, 44%, 0.53);
+	flex: 0 0 auto;
+	height: 20px;
+	border-bottom: 1px dashed hsl(40, 95%, 42%);
+}
+
 .hardSkills{
 	list-style-type: disc;
 	-moz-column-count:3;
@@ -36,8 +53,7 @@ html, body {background: #181818; font-family: 'Montserrat', helvetica, arial, sa
 	color: #444;
 }
 abbr {
-	border-bottom: 1px dashed #cf8a05;
-	/*color: #000080;*/
+	border-bottom: 1px dashed hsl(40, 95%, 42%);
 }
 
 .clear {clear: both;}
@@ -53,14 +69,14 @@ p {
 #cv {
 	width: 90%;
 	max-width: 800px;
-	background: #f3f3f3;
+	background: hsl(0, 0%, 95%);
 	margin: 30px auto;
 }
 
 .mainDetails {
 	padding: 25px 35px;
-	border-bottom: 2px solid #cf8a05;
-	background: #ededed;
+	border-bottom: 2px solid hsl(40, 95%, 42%);
+	background: hsl(0, 0%, 93%);
 }
 
 #name h1 {
@@ -110,11 +126,11 @@ p {
 
 #contactDetails ul li {
 	margin-bottom: 3px;
-	color: #444;
+	color: hsl(0, 0%, 27%);
 }
 
 #contactDetails ul li a, a[href^=tel] {
-	color: #444;
+	color: hsl(0, 0%, 27%);
 	text-decoration: none;
 	-webkit-transition: all .3s ease-in;
 	-moz-transition: all .3s ease-in;
@@ -124,12 +140,12 @@ p {
 }
 
 #contactDetails ul li a:hover {
-	color: #cf8a05;
+	color: hsl(40, 95%, 42%);
 }
 
 
 section {
-	border-top: 1px solid #dedede;
+	border-top: 1px solid hsl(0, 0%, 87%);
 	padding: 20px 0 0;
 }
 
@@ -155,7 +171,7 @@ section:last-child {
 	font-family: 'Montserrat', Helvetica, Arial, sans-serif;
 	font-style: italic;
 	font-size: 1.5em;
-	color: #cf8a05;
+	color: hsl(40, 95%, 42%);
 }
 
 .sectionContent h2 {
@@ -182,6 +198,15 @@ section:last-child {
 
 .keySkills ul li {
 	margin-bottom: 3px;
+}
+
+.creator{
+	margin-right: 10px;
+	color: hsl(40, 95%, 42%);
+	font-size: 10px;
+	font-style: italic;
+	text-align: right;
+
 }
 
 @media all and (min-width: 602px) and (max-width: 800px) {
@@ -354,9 +379,9 @@ section:last-child {
 }
 
 .delayOne {
-	-webkit-animation-delay: 0, .5s;
-	-moz-animation-delay: 0, .5s;
-	animation-delay: 0, .5s;
+	-webkit-animation-delay: 0, 0.5s;
+	-moz-animation-delay: 0, 0.5s;
+	animation-delay: 0, 0.5s;
 }
 
 .delayTwo {
@@ -380,5 +405,5 @@ section:last-child {
 .delayFive {
 	-webkit-animation-delay: 0, 2.5s;
 	-moz-animation-delay: 0, 2.5s;
-	animation-delay: 0, 2.5s;
+	animation-delay:0, 2.5s;
 }
