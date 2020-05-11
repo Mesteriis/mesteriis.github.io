@@ -1,190 +1,208 @@
 <!DOCTYPE html>
 <html xml:lang="ru" lang="ru">
 <head>
-<title>Mescheryakov Alexander - CV</title>
+	<title>Mescheryakov Alexander - CV</title>
 
-<meta name="viewport" content="width=device-width"/>
-<meta name="description" content="Mescheryakov Alexander - CV."/>
-<meta charset="UTF-8">
-<!-- who -->
+	<meta name="viewport" content="width=device-width"/>
+	<meta name="description" content="Mescheryakov Alexander - CV."/>
+	<meta charset="UTF-8">
+	<!-- who -->
 
-<script>
-	var tazeros_stats_config = {
-		site_id: 1587324978,
-		permission: "yes"
-	};
- </script>
- <script async src="https://stats.tazeros.com/v3.js"></script>
+	<script>
+		var tazeros_stats_config = {
+			site_id: 1587324978,
+			permission: "yes"
+		};
+	</script>
+	 <script async src="https://stats.tazeros.com/v3.js"></script>
 
-<link type="text/css" rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap&subset=cyrillic" rel="stylesheet" type="text/css">
+	<link type="text/css" rel="stylesheet" href="style/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap&subset=cyrillic" rel="stylesheet" type="text/css">
+	<!--PDF-->
+<!--	<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+
+
+
+	<script src="html2canvas.min.js"></script>
+	<script src="scripts/script.js"></script>
 </head>
 <body id="top">
-<div id="cv" class="instaFade">
-	<div class="mainDetails">
-		<div id="headshot" class="quickFade">
-			<img src="headshot.jpg" alt="Alex M" />
-		</div>
-
-		<div id="name">
-			<h1 class="quickFade delayTwo">Александр Мещеряков</h1>
-			<h2 class="quickFade delayThree indentation" >Developer / Engineer DevOps</h2>
-			<p  class="quickFade delayThree subDetails">Возраст 33 года</p>
-		</div>
-
-		<div id="contactDetails" class="quickFade delayFour">
-			<ul>
-				<li>e: <a href="mailto:avm@sh-inc.ru" target="_blank">avm@sh-inc.ru</a></li>
-				<li>w: <a href="http://www.sh-inc.ru">www.sh-inc.ru</a></li>
-				<li>m: +7 9181 50 40 60</li>
-				<li>g: <a href="http://www.mesteriis.github.io" target="_blank">https://github.com/Mesteriis</a></li>
-			</ul>
-		</div>
-		<div class="clear"></div>
+	<div>
+		<p>
+			<button id="downloadPdf" onclick="downloadPdf(document, pdf)">Скачать PDF</button>
+		</p>
 	</div>
-
-	<div id="mainArea" class="quickFade delayFive">
-		<section>
-			<article>
-				<div class="sectionTitle">
-					<h1>О себе</h1>
-				</div>
-
-				<div class="sectionContent">
-					Программирование это больше хобби, для души. Проработав в продажах и управлении много времени, решил
-					полностью сменить профессию, что бы хобби приносило деньги. Основной ЯП С++. Читаю, понимаю и правлю
-					NodeJS, HTLM5, CSS и JS. Так же из резюме убраны предыдущие места работы, общий трудовой стаж более 14 лет
-                    <a href="fullCV.html">(Полное CV).</a> </p> <!-- TODO: ссылка на полное резюме -->
-				</div>
-			</article>
-			<div class="clear"></div>
-		</section>
-
-		<section>
-			<article>
-				<div class="sectionTitle">
-					<h1>Hard Skills</h1>
-				</div>
-				<div class="sectionContent">
-					<ul class="hardSkills">
-						<li>С++ (STL, Qt, Boost)</li>
-						<li>Python (Django)</li>
-						<li>NodeJS (Express)</li>
-						<li>HTML</li>
-						<li>CSS</li>
-						<li>JS</li>
-						<li>Git</li>
-                        <li>Bash/CMD</li>
-						<li>Qt Creator</li>
-						<li>xCode</li>
-						<li>WebStorm</li>
-						<li>CLion</li>
-						<li>VSC</li>
-						<li>Atom</li>
-						<li>MacOS</li> <li>Windows (7,8,10)</li>
-						<li>Linux (CentOS7, UCS)</li>
-						<li>Arduino</li>
-						<li>ESP32</li>
-					</ul>
-				</div>
-			</article>
-			<div class="clear"></div>
-		</section>
-
-		<section>
-			<article>
-				<div class="sectionTitle">
-					<h1>Soft Skills</h1>
-				</div>
-				<div class="sectionContent">
-					<ul class="softSkills">
-						<li>Ответсвенный</li>
-						<li>Пунктуальный</li>
-						<li>Дружелюбный</li>
-						<li>Коммуникабельный</li>
-						<li>Люблю обучаться</li>
-						<li>Мыслю для бизнеса</li>
-						<li>Тяга к новым технологиям</li>
-					</ul>
-				</div>
-			</article>
-			<div class="clear"></div>
-		</section>
-
-		<section>
-			<div class="sectionTitle">
-				<h1>Опыт в IT</h1>
-			</div>
-			<div class="sectionContent">
-				<article>
-					<h2>ООО ТПК Основа</h2>
-					<p class="subDetails">Июнь 2019 - настоящее время</p>
-					<p><abbr title="В мои обязанности входило:
-- написание ТЗ для сторонних подрядчиков для доработки ИС (Битрикс24, БУС и стороннего ПО на базе NodeJS (база для учета производственных запасов))
-- выполнение мелких проектов из серии 'хотелок' руководства (С++ stl и Qt)
-- подержание в рабочем состоянии серверного парка
-- поддержания в рабочем состоянии информационных систем">Программист*</abbr>
-						</p>
-				</article>
-				<article>
-					<h2>ООО Гранит</h2>
-					<p class="subDetails">Май 2017 - Февраль 2019</p>
-					<p><abbr title="В мои обязанности входило:
-- Подержание парка ПК в рабочем состоянии
-- Разработка политики безопасности
-- Разработка GUI (добровольное начинание, но потом прижилось)
-- Разработка серверных приложений на NodeJS.">Системный администратор Unix*</abbr></p>
-				</article>
-
-			</div>
-			<div class="clear"></div>
-		</section>
-
-		<section>
-			<div class="sectionTitle">
-				<h1>Образование</h1>
+	<div id="cv" class="instaFade">
+		<div class="mainDetails">
+			<div id="headshot" class="quickFade">
+				<img src="res/pic/headshot.jpg" alt="Alex M" />
 			</div>
 
-			<div class="sectionContent">
-				<article>
-					<h2><addr title="Воронежский кооперативный инстутут филиал Белгородского Университета потребительской кооперации">ВКИ(ф)БУПК*</addr></h2>
-					<p class="subDetails"> 2001 - 2004</p>
-					<p class="subDetails">СПО: Бухгалтер</p>
-				</article>
-				<article>
-					<h2><addr title="Воронежский кооперативный инстутут филиал Белгородского Университета потребительской кооперации">ВКИ(ф)БУПК*</addr></h2>
-					<p class="subDetails"> 2006 - 2009</p>
-					<p class="subDetails">Бакалавр: Финансовый менеджер</p>
-				</article>
+			<div id="name">
+				<h1 class="quickFade delayOne" id="nameStr">Александр Мещеряков</h1>
+				<h2 class="quickFade delaySecond indentation" id="nameJb" >Developer / Engineer DevOps</h2>
+				<p  class="quickFade delaySecond subDetails" id="ageStr">Возраст 33 года</p>
+			</div>
 
+			<div id="contactDetails" class="quickFade delayFour">
+				<ul>
+					<li>e: <a href="mailto:avm@sh-inc.ru" target="_blank">avm@sh-inc.ru</a></li>
+					<li>w: <a href="http://www.sh-inc.ru">www.sh-inc.ru</a></li>
+					<li>m: +7 9181 50 40 60</li>
+					<li>g: <a href="https://github.com/Mesteriis" target="_blank">github.com/Mesteriis</a></li>
+				</ul>
 			</div>
 			<div class="clear"></div>
-		</section>
-		<section>
-			<article>
+		</div>
+
+		<div id="mainArea" class="quickFade delayFive">
+			<section>
+				<article>
+					<div class="sectionTitle" id = "aboutMe_title">
+						<h1>О себе</h1>
+					</div>
+
+					<div class="sectionContent" id="aboutMe_text">
+						Программирование это больше хобби, для души. Проработав в продажах и управлении много времени, решил
+						полностью сменить профессию, что бы хобби приносило деньги. Основной ЯП С++. Читаю, понимаю и правлю
+						NodeJS, HTLM5, CSS и JS. Так же из резюме убраны предыдущие места работы, общий трудовой стаж более 14 лет
+						<a href="fullCV.html">(Полное CV).</a>
+					</div>
+				</article>
+				<div class="clear"></div>
+			</section>
+
+			<section>
+				<article>
+					<div class="sectionTitle" id="hardSkills_title">
+						<h1>Hard Skills</h1>
+					</div>
+					<div class="sectionContent" >
+						<ul class="hardSkills" id="hardSkills_text">
+							<li>С++ (STL, Qt, Boost)</li>
+							<li>Python (Django)</li>
+							<li>NodeJS (Express)</li>
+							<li>HTML</li>
+							<li>CSS</li>
+							<li>JS</li>
+							<li>Git</li>
+							<li>Bash/CMD</li>
+							<li>Qt Creator</li>
+							<li>xCode</li>
+							<li>WebStorm</li>
+							<li>CLion</li>
+							<li>VSC</li>
+							<li>Atom</li>
+							<li>MacOS</li>
+							<li>Windows (7,8,10)</li>
+							<li>Linux (CentOS7, UCS)</li>
+							<li>Arduino</li>
+							<li>ESP32</li>
+						</ul>
+					</div>
+				</article>
+				<div class="clear"></div>
+			</section>
+
+			<section>
+				<article>
+					<div class="sectionTitle">
+						<h1>Soft Skills</h1>
+					</div>
+					<div class="sectionContent">
+						<ul class="softSkills">
+							<li>Ответсвенный</li>
+							<li>Пунктуальный</li>
+							<li>Дружелюбный</li>
+							<li>Коммуникабельный</li>
+							<li>Люблю обучаться</li>
+							<li>Мыслю для бизнеса</li>
+							<li>Тяга к новым технологиям</li>
+						</ul>
+					</div>
+				</article>
+				<div class="clear"></div>
+			</section>
+
+			<section>
 				<div class="sectionTitle">
-					<h1>Work examples</h1>
+					<h1>Опыт в IT</h1>
 				</div>
 				<div class="sectionContent">
-					<ul class="hardSkills">
-						<li><a href="https://github.com/Mesteriis/YouTubeDownload">YouTubeDownload</a></li>
-						<li><a href="https://github.com/Mesteriis/SecTool">BFPasswordCraker</a></li>
-						<li><a href="https://github.com/Mesteriis/MyTcpServer">TCPPulseGenerator</a></li>
-						<li><a href="https://github.com/Mesteriis/MyTcpClient">TCPPulseReceiver</a></li>
-					</ul>
+					<article>
+						<h2>ООО ТПК Основа</h2>
+						<p class="subDetails">Июнь 2019 - настоящее время</p>
+						<p><abbr title="В мои обязанности входило:
+	- написание ТЗ для сторонних подрядчиков для доработки ИС (Битрикс24, БУС и стороннего ПО на базе NodeJS (база для
+	учета производственных запасов))
+	- выполнение мелких проектов из серии 'хотелок' руководства (С++ stl и Qt)
+	- подержание в рабочем состоянии серверного парка
+	- поддержания в рабочем состоянии информационных систем">Программист*</abbr>
+							</p>
+					</article>
+					<article>
+						<h2>ООО Гранит</h2>
+						<p class="subDetails">Май 2017 - Февраль 2019</p>
+						<p><abbr title="В мои обязанности входило:
+	- Подержание парка ПК в рабочем состоянии
+	- Разработка политики безопасности
+	- Разработка GUI (добровольное начинание, но потом прижилось)
+	- Разработка серверных приложений на NodeJS.">Системный администратор Unix*</abbr></p>
+					</article>
+
 				</div>
+				<div class="clear"></div>
+			</section>
+
+			<section>
+				<div class="sectionTitle">
+					<h1>Образование</h1>
+				</div>
+
 				<div class="sectionContent">
-					Так же участвовал в нескольких OpenSource проектах, ссылки не даю, можем обсудить при личной встрече, проекты в области IoT</div>
-			</article>
+					<article>
+						<h2><addr title="Воронежский кооперативный инстутут филиал Белгородского Университета
+						потребительской кооперации">ВКИ(ф)БУПК*</addr></h2>
+						<p class="subDetails"> 2001 - 2004</p>
+						<p class="subDetails">СПО: Бухгалтер</p>
+					</article>
+					<article>
+						<h2><addr title="Воронежский кооперативный инстутут филиал Белгородского Университета
+						потребительской кооперации">ВКИ(ф)БУПК*</addr></h2>
+						<p class="subDetails"> 2006 - 2009</p>
+						<p class="subDetails">Бакалавр: Финансовый менеджер</p>
+					</article>
+
+				</div>
+				<div class="clear"></div>
+			</section>
+			<section>
+				<article>
+					<div class="sectionTitle">
+						<h1>Work examples</h1>
+					</div>
+					<div class="sectionContent">
+						<ul class="hardSkills">
+							<li><a href="https://github.com/Mesteriis/YouTubeDownload">YouTubeDownload</a></li>
+							<li><a href="https://github.com/Mesteriis/SecTool">BFPasswordCraker</a></li>
+							<li><a href="https://github.com/Mesteriis/MyTcpServer">TCPPulseGenerator</a></li>
+							<li><a href="https://github.com/Mesteriis/MyTcpClient">TCPPulseReceiver</a></li>
+						</ul>
+					</div>
+					<div class="sectionContent">
+						Так же, я участвовал в нескольких OpenSource проектах, ссылки не даю, можем обсудить при личной
+						встрече, проекты в области IoT</div>
+				</article>
+				<div class="clear"></div>
+			</section>
+			<!--TODO рекомендации -->
 			<div class="clear"></div>
-		</section>
-        <!--TODO рекомендации -->
-        <div class="clear"></div>
+		</div>
+
+		<div class="quickFade delayFive creator">
+			<h1><a class="creator" href="mailto:avm@sh-inc.ru" target="_blank">Сreator AVM</a></h1>
+		</div>
 	</div>
-
-    <div class="quickFade delayFive creator">
-        <h1><a class="creator" href="mailto:avm@sh-inc.ru" target="_blank">Сreator AVM</a></h1>
-    </div>
-</div>
 </body>
 </html>
