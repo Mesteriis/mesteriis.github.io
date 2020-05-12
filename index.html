@@ -28,11 +28,6 @@
 	<script src="scripts/script.js"></script>
 </head>
 <body id="top">
-	<div>
-		<p>
-			<button id="downloadPdf" onclick="downloadPdf(document, pdf)">Скачать PDF</button>
-		</p>
-	</div>
 	<div id="cv" class="instaFade">
 		<div class="mainDetails">
 			<div id="headshot" class="quickFade">
@@ -43,6 +38,9 @@
 				<h1 class="quickFade delayOne" id="nameStr">Александр Мещеряков</h1>
 				<h2 class="quickFade delaySecond indentation" id="nameJb" >Developer / Engineer DevOps</h2>
 				<p  class="quickFade delaySecond subDetails" id="ageStr">Возраст 33 года</p>
+				<p>
+					<button class="quickFade delaySecond dwn" id="downloadPdf" onclick="downloadPdf(document, pdf)">Скачать PDF</button>
+				</p>
 			</div>
 
 			<div id="contactDetails" class="quickFade delayFour">
@@ -80,7 +78,7 @@
 					</div>
 					<div class="sectionContent" >
 						<ul class="hardSkills" id="hardSkills_text">
-							<li>С++ (STL, Qt, Boost)</li>
+							<li>С++ (STL, Qt)</li>
 							<li>Python (Django)</li>
 							<li>NodeJS (Express)</li>
 							<li>HTML</li>
@@ -91,14 +89,15 @@
 							<li>Qt Creator</li>
 							<li>xCode</li>
 							<li>WebStorm</li>
+							<li>PyCharm</li>
 							<li>CLion</li>
 							<li>VSC</li>
 							<li>Atom</li>
 							<li>MacOS</li>
 							<li>Windows (7,8,10)</li>
 							<li>Linux (CentOS7, UCS)</li>
-							<li>Arduino</li>
-							<li>ESP32</li>
+							<li>Arduino IDE</li>
+							<li>ESP, SMT</li>
 						</ul>
 					</div>
 				</article>
@@ -107,11 +106,11 @@
 
 			<section>
 				<article>
-					<div class="sectionTitle">
+					<div class="sectionTitle" id="softSkills_title">
 						<h1>Soft Skills</h1>
 					</div>
 					<div class="sectionContent">
-						<ul class="softSkills">
+						<ul class="softSkills" id="softSkills_text">
 							<li>Ответсвенный</li>
 							<li>Пунктуальный</li>
 							<li>Дружелюбный</li>
@@ -185,7 +184,7 @@
 					<div class="sectionContent">
 						<ul class="hardSkills">
 							<li><a href="https://github.com/Mesteriis/YouTubeDownload">YouTubeDownload</a></li>
-							<li><a href="https://github.com/Mesteriis/SecTool">BFPasswordCraker</a></li>
+							<li><a href="https://github.com/Mesteriis/SecTool">BFPasswordCracker</a></li>
 							<li><a href="https://github.com/Mesteriis/MyTcpServer">TCPPulseGenerator</a></li>
 							<li><a href="https://github.com/Mesteriis/MyTcpClient">TCPPulseReceiver</a></li>
 						</ul>

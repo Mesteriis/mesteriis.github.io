@@ -300,28 +300,18 @@ const FontInBase64 = "AAEAAAAPAIAAAwBwRkZUTU5xNrYAAGI0AAAAHEdERUYC/QHSAABaPAAAAD
     "BADsAEAASACQAKQAvADMANwA5ADoAPABJAFUAWQBaAFwAcwB0AHoAewB8AIAAgQCCAIMAhwCKAI4AkACRAJIAkwCUAJoAnACdAJ4AoQCiAKMApQC" +
     "nAK4AsACxALIAswC0ALwAvQC+AMEAyADJAMoAzgDPANIA0wDVAAAAAQAAAADMPaLPAAAAAMEZyfMAAAAAwRnJ8w=="
 
-const pdfSize = 300;
 const pdf = new jsPDF({
     unit: 'pt',
     orientation: 'p',
-    // format: [pdfSize, pdfSize],
-    //lineHeight: 1.2
 });
+
 pdf.addFileToVFS("HelveticaThin.ttf", FontInBase64)
 pdf.addFont("HelveticaThin.ttf", "HelveticaThin", "Bold")
 pdf.setFont("HelveticaThin","Bold")
-pdf.setFontSize(12);
-
-function getImgFromUrl(logo_url, callback) {
-    var img = new Image();
-    img.src = logo_url;
-    img.onload = function () {
-        callback(img);
-    };
-}
 
 function downloadPdf(document, pdf ) {
-    alert("While in development, deadline is 13/05/2020")
+    let fontSize = 12
+    pdf.setFontSize(fontSize);
     // size plate
     const _minWidth = 30;
     const _maxWidth = 560;
@@ -341,8 +331,8 @@ function downloadPdf(document, pdf ) {
     pdf.setDrawColor(255, 0, 0);
     // Lines
     pdf.line(_minWidth, 130, _maxWidth, 130); // top line
-    pdf.line(_maxWidth * .25, 130, _maxWidth * .25, _maxHeight); // left line
-    pdf.line(_minWidth, 215, _maxWidth, 215)
+    pdf.line(_minWidth, 215, _maxWidth, 215) // AboutMe end
+
     // main area
     const _startWidth_text = _maxWidth * .25 + 10
     const _endWidth_text = _maxWidth
@@ -363,17 +353,65 @@ function downloadPdf(document, pdf ) {
         element.replace(/\s+/g, ' ').trim();
         _hardSkills_text.push(element)
     })
-    // console.log(_hardSkills_text)
+    let widthTextArea = _endWidth_text - _startWidth_text
+    let arrXPos = [_startWidth_text,
+        _startWidth_text+widthTextArea*.38,
+        _startWidth_text+widthTextArea*.69]
 
+    const yParallax = fontSize + 2
+    let countRow = 0
+    let maxCountRow = Math.ceil(_hardSkills_text.length/arrXPos.length)
+    let itemsCount = 0
+    let yPos = 235
+    pdf.text(_hardSkills_title,  _minWidth, yPos)
+    //
+    for (yPos; countRow <= maxCountRow; yPos += yParallax){
+        if (itemsCount>_hardSkills_text.length) break;
+        arrXPos.forEach(element => {
+            if (_hardSkills_text[itemsCount]!== undefined){
+                pdf.text(_hardSkills_text[itemsCount], element,yPos)
+            }
+            itemsCount++
+        })
+        countRow++;
+    }
+    pdf.line(_minWidth, yPos, _maxWidth, yPos) // line hardSkills end
+    yPos += 20
+    // soft Skills
+    let _softSkills_title = document.getElementById('softSkills_title').innerText;
+    pdf.text(_softSkills_title, _minWidth, yPos)
+    let _softSkills__text = new Array();
+    elements = document.getElementById('softSkills_text').innerText;
+    element = elements.split("\n");
+    element.forEach(element => {
+        element.replace(/\s+/g, ' ').trim();
+        _softSkills__text.push(element)
+    })
+    countRow = 0
+    maxCountRow = Math.ceil(_softSkills__text.length/arrXPos.length)
+    itemsCount = 0
 
+    for (yPos; countRow <= maxCountRow; yPos += yParallax){
+        if (itemsCount>_softSkills__text.length) break;
+        arrXPos.forEach(element => {
+            if (_softSkills__text[itemsCount]!== undefined){
+                pdf.text(_softSkills__text[itemsCount], element,yPos)
+            }
+            itemsCount++
+        })
+        countRow++;
+    }
+    pdf.line(_minWidth, yPos, _maxWidth, yPos) // line softSkills end
+    pdf.line(_maxWidth * .25, 130, _maxWidth * .25, yPos); // left line
+    yPos += 20
+    const noteTitle = "NOTE"
+    pdf.text(noteTitle, _maxWidth/2 - noteTitle.length/2*3, yPos )
+    yPos += 10
+    pdf.line(_minWidth, yPos, _maxWidth, yPos) // line Note
 
-
-
-
-
-
-
-
+    pdf.line(_minWidth, _maxHeight + 15, _maxWidth, _maxHeight + 15) // line Note end
+    const sing = "link to full resume: mesteriis.github.io"
+    pdf.text(sing,_maxWidth/2 - sing.length/2*3,_maxHeight + 25  )
 
     // for name file
     let d = new Date();
@@ -383,8 +421,8 @@ function downloadPdf(document, pdf ) {
     let now = curr_date + ':' + curr_month + ":" + curr_year;
     let nameFileToSave = 'Mescheryakov-CV_' + now
     //save pdf
-    // pdf.save(nameFileToSave)
-    // pdf.output('dataurlnewwindow');
+    pdf.save(nameFileToSave)
+    // pdf.output('dataurlnewwindow'); // for edit
 }
 
 
