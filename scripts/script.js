@@ -346,7 +346,7 @@ function downloadPdf(document, pdf ) {
 
     // Hard Skills
     let _hardSkills_title = document.getElementById('hardSkills_title').innerText;
-    let _hardSkills_text = new Array();
+    let _hardSkills_text = [];
     let elements = document.getElementById('hardSkills_text').innerText;
     let element = elements.split("\n");
     element.forEach(element => {
@@ -380,7 +380,7 @@ function downloadPdf(document, pdf ) {
     // soft Skills
     let _softSkills_title = document.getElementById('softSkills_title').innerText;
     pdf.text(_softSkills_title, _minWidth, yPos)
-    let _softSkills__text = new Array();
+    let _softSkills__text = [];
     elements = document.getElementById('softSkills_text').innerText;
     element = elements.split("\n");
     element.forEach(element => {
@@ -425,4 +425,36 @@ function downloadPdf(document, pdf ) {
     // pdf.output('dataurlnewwindow'); // for edit
 }
 
+// AppointmentOfInterview
+// demo
+// cal_single = ics();
+// cal_single.addEvent('Best Day', 'This is the best day to demonstrate a single event.', 'New York', '11/12/1987', '11/12/1987');
 
+
+function saveEvent(document){
+    let cal_single = ics();
+    cal_single.addEvent('Best Day', 'This is the best day to demonstrate a single event.', 'New York', '11/12/1987', '11/12/1987');
+}
+
+function openForm(form) {
+    document.getElementById(form).style.display = "block";
+}
+
+function closeForm(form) {
+    document.getElementById(form).style.display = "none";
+}
+
+
+function switchView(){
+    let VisibleFull = document.getElementById('fullLengthOfService').style.display;
+    if (VisibleFull === "none") {
+        document.getElementById('fullLengthOfService').style.display = "block"
+        document.getElementById('cv').style.display = "none"
+    } else {
+        document.getElementById('fullLengthOfService').style.display = "none"
+        document.getElementById('cv').style.display = "block"
+    }
+}
+
+document.getElementById('fullLengthOfService').style.display = "none"
+document.getElementById('cv').style.display = "block"
