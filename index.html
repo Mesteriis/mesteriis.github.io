@@ -7,20 +7,18 @@
 	<meta charset="UTF-8">
 	<!-- who -->
 		<script>
-			let tazeros_stats_config = {
+			var tazeros_stats_config = {
 				site_id: 1587324978,
 				permission: "yes"
 			};
 		</script>
 		<script async src="https://stats.tazeros.com/v3.js"></script>
 	<!--Style-->
-<!--	<link type="text/css" rel="stylesheet" href="style/style.css">-->
-	<link type="text/css" rel="stylesheet" href="style/newStyle.css">
+	<link type="text/css" rel="stylesheet" href="style/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap&subset=cyrillic" rel="stylesheet" type="text/css">
 
 	<!--PDF-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
-<!--	<script src="html2canvas.min.js"></script>-->
 	<!--add meeting	-->
 	<script src="scripts/ics.js"></script>
 	<!--main script-->
@@ -29,7 +27,7 @@
 </head>
 <header class="main_area" id="header">
 	<div class="mainDetails instaFade">
-		<div id="avatar" class="quickFade">
+		<div id="avatar" class="quickFade delayOne">
 			<img src="res/pic/headshot.jpg" alt="Alex M" />
 		</div>
 
@@ -64,7 +62,7 @@
 						Программирование это больше хобби, для души. Проработав в продажах и управлении много времени, решил
 						полностью сменить профессию, что бы хобби приносило деньги. Основной ЯП С++. Читаю, понимаю и правлю
 						NodeJS, HTLM5, CSS и JS. Так же из резюме убраны предыдущие места работы, общий трудовой стаж более 14 лет
-						<button type="button" class="switchView" onclick="switchView()">Switch</button>
+						<button type="button" class="btn-on-text" onclick="switchView()">Полный трудовой стаж</button>
 					</div>
 				</article>
 				<div class="clear"></div>
@@ -205,13 +203,13 @@
 			</div>
 		</div>
 
-		<div id="fullLengthOfService" class="main_area long_text">
+		<div id="fullLengthOfService" class="main_area long_text instaFade delayOne">
 			<section>
 				<article>
 					<div>
 						Большое спасибо, что заинтересовались моим полным стажем, все это время я параллейно занимался
 						разработкой студентам (курсовые, контрольные работы) и для себя.
-						<button type="button" class="switchView" onclick="switchView()">Switch</button>
+						<button type="button" class="btn-on-text" onclick="switchView()">Обратно к CV</button>
 					</div>
 				</article>
 				<div class="clear"></div>
@@ -219,11 +217,11 @@
 
 			<section>
 				<article>
-					<div class="sectionTitle">
+					<div class="sectionTitle instaFade delayOne">
 						<h1>ООО ТПК Основа</h1>
 						<h2>Июнь 2019 - нв</h2>
 					</div>
-					<div class="sectionContent">
+					<div class="sectionContent instaFade delayTwo">
 						Программист
 						<p>В мои обязанности входило:</p>
 						<p>- подержание в рабочем состоянии серверного парка</p>
@@ -238,11 +236,11 @@
 
 			<section>
 				<article>
-					<div class="sectionTitle">
+					<div class="sectionTitle instaFade delayOne">
 						<h1>ООО Гранит</h1>
 						<h2>Май 2017 - Июнь 2019</h2>
 					</div>
-					<div class="sectionContent">
+					<div class="sectionContent instaFade delayTwo">
 						Системный администратор Unix
 						<p>В мои обязанности входило:</p>
 						<p>- Подержание парка ПК в рабочем состоянии</p>
@@ -256,11 +254,11 @@
 
 			<section>
 				<article>
-					<div class="sectionTitle">
+					<div class="sectionTitle  instaFade delayOne">
 						<h1>Товарищество кроликов великанов</h1>
 						<h2>Май 2016 — апрель 2017</h2>
 					</div>
-					<div class="sectionContent">
+					<div class="sectionContent instaFade delayTwo">
 						Руководитель отдела продаж
 						<p>Организация работы отдела, контроль за плановыми показателями, набор и адаптация сотрудников.</p>
 					</div>
@@ -270,11 +268,11 @@
 
 			<section>
 				<article>
-					<div class="sectionTitle">
+					<div class="sectionTitle  instaFade delayOne">
 						<h1>ООО ФТК Вертикаль</h1>
 						<h2>Март 2014 — февраль 2016</h2>
 					</div>
-					<div class="sectionContent">
+					<div class="sectionContent instaFade delayTwo">
 						Генеральный директор
 						<p>Руководство финансовой и хозяйственной деятельностью. Организация работы и эффективного
 							взаимодействия всех структурных подразделений. Обеспечение соблюдения законности в деятельности.
@@ -287,11 +285,11 @@
 
 			<section>
 				<article>
-					<div class="sectionTitle">
+					<div class="sectionTitle  instaFade delayOne">
 						<h1>ООО Дороги Придонья</h1>
 						<h2>Март 2014 — февраль 2016</h2>
 					</div>
-					<div class="sectionContent">
+					<div class="sectionContent instaFade delayTwo">
 						Финансовый директор
 						<p>Организация и управление финансовыми ресурсами предприятия с целью получения максимальной
 							прибыли. Непосредственное ведение переговоров с банками и контрагентами. Анализ
@@ -309,11 +307,11 @@
 
 			<section>
 				<article>
-					<div class="sectionTitle">
+					<div class="sectionTitle  instaFade delayOne">
 						<h1>АО Сбербанк</h1>
 						<h2>Август 2010 — июль 2012</h2>
 					</div>
-					<div class="sectionContent">
+					<div class="sectionContent instaFade delayTwo">
 						Инспектор
 						<p> - Управление по работе с корпоративными клиентами и малым бизнесом. (Проработка потенциала по
 							клиентам, отвечающих условиям предоставления основных банковских продуктов для юр. лиц.
@@ -334,11 +332,11 @@
 
 			<section>
 				<article>
-					<div class="sectionTitle">
+					<div class="sectionTitle instaFade delayOne">
 						<h1>КЕЙ, КЦ</h1>
 						<h2>Июль 2008 — февраль 2010</h2>
 					</div>
-					<div class="sectionContent">
+					<div class="sectionContent instaFade delayTwo">
 						Менеджер по продажам
 						<p> Работа с клиентами, ведение переговоров на уровне директоров фирм о поставке оборудования и
 							развертывание сложно составных проектов, работа с рекламациями, участие в подборе персонала,
@@ -350,11 +348,11 @@
 
 			<section>
 				<article>
-					<div class="sectionTitle">
+					<div class="sectionTitle instaFade delayOne">
 						<h1>ШКОЛА-ИНФО, НПП</h1>
 						<h2>Октябрь 2006 — июль 2008</h2>
 					</div>
-					<div class="sectionContent">
+					<div class="sectionContent instaFade delayTwo">
 						Менеджер по продажам
 						<p>Работа с клиентами, управление отделом продаж (магазин), логистика товара на складе магазина,
 							выставка товара на витрины согласно "бренд-буку". Отдельный проект, развитие продаж техники
@@ -366,11 +364,11 @@
 
 			<section>
 				<article>
-					<div class="sectionTitle">
+					<div class="sectionTitle  instaFade delayOne">
 						<h1>Протек, ЗАО НВП</h1>
 						<h2>Октябрь 2006 — июль 2008</h2>
 					</div>
-					<div class="sectionContent">
+					<div class="sectionContent instaFade delayTwo">
 						Бухгалтер
 						<p>Ведение бухгалтерского учета по счетам: 51 (расчетной счет), 60 (расчеты с поставщиками и
 							заказчиками), 10 (учет ГСМ)</p>
@@ -381,10 +379,10 @@
 
 			<!--------------------------------------------------------------------------------------------------------------------->
 			<section>
-				<div class="sectionTitle">
+				<div class="sectionTitle instaFade delayOne">
 					<h1> Общий стаж </h1>
 				</div>
-				<div class="sectionContent">
+				<div class="sectionContent  instaFade delayTwo">
 					<article>
 						<p>Опыт работы 13 лет 10 месяцев</p>
 					</article>
@@ -394,49 +392,51 @@
 		</div>
 <!--	</div>-->
 </body>
-<footer class="">
+<footer class="instaFade delayFive">
 	<!--buttom-->
-	<button class="quickFade delaySecond button-get-pdf" onclick="openForm('FormDownloadPdf')">Get pdf</button>
-	<div class="form-popup" id="FormDownloadPdf">
-		<form class="form-container">
-			<h2>Download pdf file</h2><br>
-			<label>
-				<input type="date" name="email" required>
-			</label>
-			<label>
-				<input type="time" name="time" required>
-			</label><br>
-			<h3>Location</h3>
-			<label>
-				<input name="location" required type="location">
-			</label><br>
-			<h3>Contact</h3>
-			<label>
-				<input type="text"  name="text" required>
-			</label>
+	<button class="btn" id="getPDF" onclick="openForm('FormDownloadPdf')">Get PDF</button>
+<!--	<div class="form-popup" id="FormDownloadPdf">-->
+<!--		<form class="form-container">-->
+<!--			<h2>Download pdf file</h2><br>-->
+<!--			<label>-->
+<!--				<input type="date" name="email" required>-->
+<!--			</label>-->
+<!--			<label>-->
+<!--				<input type="time" name="time" required>-->
+<!--			</label><br>-->
+<!--			<h3>Location</h3>-->
+<!--			<label>-->
+<!--				<input name="location" required type="location">-->
+<!--			</label><br>-->
+<!--			<h3>Contact</h3>-->
+<!--			<label>-->
+<!--				<input type="text"  name="text" required>-->
+<!--			</label>-->
+<!---->
+<!--			<button type="submit" class="btn" onclick="downloadPdf(document, pdf)">Get pdf</button>-->
+<!--			<button type="button" class="btn cancel" onclick="closeForm('FormDownloadPdf')">Close</button>-->
+<!---->
+<!--		</form>-->
+<!--	</div>-->
 
-			<button type="submit" class="btn" onclick="downloadPdf(document, pdf)">Get pdf</button>
-			<button type="button" class="btn cancel" onclick="closeForm('FormDownloadPdf')">Close</button>
-
-		</form>
-	</div>
-
-	<button class="quickFade delaySecond open-button" onclick="openForm('FormCreateMeting')">Create a meeting</button>
-	<div class="form-popup" id="FormCreateMeting">
-		<form class="form-container">
-			<h2>Meeting</h2><br>
-			<h3>Date</h3>
-			<h3>Time</h3>
-			<input type="date" name="email" required>
-			<input type="time" name="time" required><br>
-			<h3>Location</h3>
-			<input name="location" required type="location"><br>
-			<h3>Contact</h3>
-			<input type="text"  name="text" required>
-
-			<button type="submit" class="btn">Send</button>
-			<button type="button" class="btn cancel" onclick="closeForm('FormCreateMeting')">Close</button>
-		</form>
-	</div>
+	<button class="btn" id="setMeeting" onclick="openForm('FormCreateMeting')">Create a meeting</button>
+<!--	<div class="form-popup" id="FormCreateMeting">-->
+<!--		<form class="form-container">-->
+<!--			<h2>Meeting</h2><br>-->
+<!--			<h3>Date</h3>-->
+<!--			<h3>Time</h3>-->
+<!--			<input type="date" name="email" required>-->
+<!--			<input type="time" name="time" required><br>-->
+<!--			<h3>Location</h3>-->
+<!--			<input name="location" required type="location"><br>-->
+<!--			<h3>Contact</h3>-->
+<!--			<input type="text"  name="text" required>-->
+<!---->
+<!--			<button type="submit" class="btn">Send</button>-->
+<!--			<button type="button" class="btn cancel" onclick="closeForm('FormCreateMeting')">Close</button>-->
+<!--		</form>-->
+<!--	</div>-->
+	<!--PropertySetting-->
+	<script src="scripts/settings.js"></script>
 </footer>
 </html>

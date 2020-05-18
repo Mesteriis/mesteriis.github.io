@@ -446,6 +446,10 @@ function closeForm(form) {
 
 
 function switchView(){
+    if (document.getElementById('fullLengthOfService').style.display === "")
+    {
+        document.getElementById('fullLengthOfService').style.display = "none"
+    }
     let VisibleFull = document.getElementById('fullLengthOfService').style.display;
     if (VisibleFull === "none") {
         document.getElementById('fullLengthOfService').style.display = "block"
@@ -455,6 +459,3 @@ function switchView(){
         document.getElementById('cv').style.display = "block"
     }
 }
-
-document.getElementById('fullLengthOfService').style.display = "none"
-document.getElementById('cv').style.display = "block"

@@ -3,7 +3,10 @@
     --t-color:#1d1d20;
     --font-size: 16px;
 }
-html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video {
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,
+samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,
+th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,
+mark,audio,video {
     border:0;
     font:inherit;
     font-size:100%;
@@ -24,18 +27,19 @@ html, body {
 * {box-sizing: border-box;}
 
 .clear {
-    padding: 10px;
+    padding: 5px;
     clear: both;
 }
 .main_area{
     width: 90%;
     max-width: 800px;
     background: hsl(0, 0%, 95%);
-    margin: 30px auto;
+    margin: 0 auto;
     padding-left: 10px;
     padding-right: 10px;
     text-align: justify;
 }
+
 .long_text{
 
     -webkit-hyphens: auto;
@@ -51,6 +55,16 @@ html, body {
     hyphenate-limit-zone: 8%;
 }
 /****************************************************Header****************************************************/
+#header{
+    padding-top: 20px;
+    top: 0;
+    position:relative;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-top: 30px;
+}
+
+
 #avatar {
     width: 12.5%;
     float: left;
@@ -77,12 +91,7 @@ html, body {
     margin-bottom: 3px;
     color: hsl(0, 0%, 27%);
 }
-#header{
-    padding-top: 20px;
-    top: 0;
-    position:relative;
-    /*padding-bottom: 10px;*/
-}
+
 /****************************************************Header END****************************************************/
 
 /****************************************************body**********************************************************/
@@ -90,8 +99,11 @@ section {
     border-top: 1px solid hsl(0, 0%, 87%);
     padding: 10px 0 0;
 }
+
 #cv{
     display: block;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 .sectionTitle {
     float: left;
@@ -187,7 +199,9 @@ h1 {
     font-style: italic;
 }
 #fullLengthOfService{
-    display:none;
+    display: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 #fullLengthOfService h1{
     font-size: 16px;
@@ -214,30 +228,59 @@ h1 {
 
 /****************************************************Footer****************************************************/
 /*кнопки и поп ап в footer*/
-.button-get-pdf {
+
+.btn{
     background-color: #555;
+    font-size:12px;
     color: white;
     padding: 16px 20px;
     border: none;
     cursor: pointer;
     opacity: 0.8;
     position: fixed;
+    width: 330px;
+}
+
+
+/*ButtonOptions*/
+.btn-circle{
+    color: white;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    font-size: 0;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    border: 1px solid #555;
+}
+/*ico*/
+.btn-circle-ico-pdf {
+    background: url(../res/pic/ico-export_pdf.png) no-repeat center center ;
+}
+.btn-circle-ico-meeting{
+    background: url(../res/pic/ico-timetable.png) no-repeat center center ;
+}
+.btn-on-text{
+    color: #444444;
+    background: #F3F3F3;
+    border: 1px #DADADA solid;
+    padding: 5px 10px;
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 9pt;
+    outline: none;
+}
+/*id*/
+#getPDF{
     bottom: 90px;
     right: 28px;
-    width: 330px;
 }
-.open-button {
-    background-color: #555;
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
-    opacity: 0.8;
-    position: fixed;
+#setMeeting{
     bottom: 30px;
     right: 28px;
-    width: 330px;
 }
+
 .form-popup {
     display: none;
     position: fixed;
@@ -299,4 +342,200 @@ h1 {
 }
 /***************************************************Footer END*********************************************************/
 
+/***************************************************Animation *********************************************************/
+@media all and (min-width: 602px) and (max-width: 800px) {
+    #avatar {
+        display: none;
+    }
+
+    .HSkills {
+        -moz-column-count:2;
+        -webkit-column-count:2;
+        column-count:2;
+    }
+    .SSkills {
+        -moz-column-count:2;
+        -webkit-column-count:2;
+        column-count:2;
+    }
+}
+@media all and (max-width: 601px) {
+    #cv {
+        width: 95%;
+        margin: 10px auto;
+        min-width: 280px;
+    }
+
+    #avatar {
+        display: none;
+    }
+
+    #PersonalData, #contactData, #header  {
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .sectionTitle, .sectionContent {
+        float: none;
+        width: 100%;
+    }
+
+    .sectionTitle {
+        margin-left: -2px;
+        font-size: 1.25em;
+    }
+
+    .HSkills, .SSkills{
+        -moz-column-count:2;
+        -webkit-column-count:2;
+        column-count:2;
+    }
+}
+@media all and (max-width: 480px) {
+    .mainDetails {
+        padding: 15px 15px;
+    }
+
+    section {
+        padding: 15px 0 0;
+    }
+
+    .main_area {
+        padding: 0 25px;
+    }
+
+
+    .HSkills, .SSkills {
+        -moz-column-count:1;
+        -webkit-column-count:1;
+        column-count:1;
+    }
+
+    #PersonalData h1 {
+        line-height: .8em;
+        margin-bottom: 4px;
+    }
+}
+@media print {
+    #cv {
+        width: 100%;
+    }
+}
+@-webkit-keyframes reset {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@-webkit-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes reset {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@-moz-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes reset {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.instaFade {
+    -webkit-animation-name: reset, fade-in;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-timing-function: ease-in;
+
+    -moz-animation-name: reset, fade-in;
+    -moz-animation-duration: 1.5s;
+    -moz-animation-timing-function: ease-in;
+
+    animation-name: reset, fade-in;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+}
+
+.quickFade {
+    -webkit-animation-name: reset, fade-in;
+    -webkit-animation-duration: 2.5s;
+    -webkit-animation-timing-function: ease-in;
+
+    -moz-animation-name: reset, fade-in;
+    -moz-animation-duration: 2.5s;
+    -moz-animation-timing-function: ease-in;
+
+    animation-name: reset, fade-in;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in;
+}
+
+.delayOne {
+    -webkit-animation-delay: 0, 0.5s;
+    -moz-animation-delay: 0, 0.5s;
+    animation-delay: 0, 0.5s;
+}
+
+.delayTwo {
+    -webkit-animation-delay: 0, 1s;
+    -moz-animation-delay: 0, 1s;
+    animation-delay: 0, 1s;
+}
+
+.delayThree {
+    -webkit-animation-delay: 0, 1.5s;
+    -moz-animation-delay: 0, 1.5s;
+    animation-delay: 0, 1.5s;
+}
+
+.delayFour {
+    -webkit-animation-delay: 0, 2s;
+    -moz-animation-delay: 0, 2s;
+    animation-delay: 0, 2s;
+}
+
+.delayFive {
+    -webkit-animation-delay: 0, 2.5s;
+    -moz-animation-delay: 0, 2.5s;
+    animation-delay:0, 2.5s;
+}
+
+/***************************************************Animation END*******************************************************/
 
