@@ -4,6 +4,7 @@ function resizeBTN() {
     let clientWidth = document.documentElement.clientWidth
     const pdfButton = document.getElementById('getPDF');
     const meetButton = document.getElementById('setMeeting');
+
     if (100 < clientWidth < 1576 && clientWidth >= 1280){
 
         if (pdfButton.className.indexOf('btn-circle') !== -1){
@@ -20,6 +21,7 @@ function resizeBTN() {
         const collection = document.getElementsByClassName('btn')
         Array.prototype.forEach.call(collection,function(elem){
             elem.style.width = w + "px";
+
         })
         return;
     }

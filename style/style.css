@@ -2,6 +2,8 @@
     --bg-color:#fafafa;
     --t-color:#1d1d20;
     --font-size: 16px;
+    --bg-color-main-area:hsl(0, 0%, 95%);
+    --max-width: 800px;
 }
 html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,
 samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,
@@ -32,8 +34,8 @@ html, body {
 }
 .main_area{
     width: 90%;
-    max-width: 800px;
-    background: hsl(0, 0%, 95%);
+    max-width:var(--max-width);
+    background: var(--bg-color-main-area);
     margin: 0 auto;
     padding-left: 10px;
     padding-right: 10px;
@@ -41,7 +43,6 @@ html, body {
 }
 
 .long_text{
-
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hyphens: auto;
@@ -120,7 +121,7 @@ h1 {
     font-family: Helvetica, 'Montserrat', Arial, sans-serif;
     font-style: italic;
     font-size: 22px;
-    color: hsl(60, 4%, 5%);
+    color: var(--t-color);
 }
 .HSkills {
     column-count:3;
@@ -177,7 +178,6 @@ h1 {
 }
 .experience ul{
     padding: 5px;
-    /*padding-bottom: 5px;*/
     background-color: rgba(0, 0, 0, 0.05);
     border-radius: 10px
 
@@ -256,6 +256,7 @@ h1 {
 }
 /*ico*/
 .btn-circle-ico-pdf {
+    display: none;
     background: url(../res/pic/ico-export_pdf.png) no-repeat center center ;
 }
 .btn-circle-ico-meeting{
@@ -273,6 +274,7 @@ h1 {
 }
 /*id*/
 #getPDF{
+    display: none;
     bottom: 90px;
     right: 28px;
 }
@@ -294,6 +296,12 @@ h1 {
     padding: 10px;
     background-color: white;
 }
+.form-container h3{
+     width: 50%;
+     padding: 3px;
+     border: none;
+     float: left;
+ }
 .form-container input[type=date], .form-container input[type=time] {
     width: 50%;
     padding: 15px;
@@ -303,20 +311,14 @@ h1 {
     float: left;
     font-size: 13px;
 }
-.form-container h3{
-    width: 50%;
-    padding: 3px;
-    border: none;
-    float: left;
-}
-.form-container input[type=location], .form-container input[type=text]{
+.form-container input[type=tel], .form-container input[type=text]{
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
     border: none;
     background: #f1f1f1;
 }
-.form-container .btn {
+.form-container .btn-on-form {
     background-color: #4CAF50;
     color: white;
     padding: 16px 20px;
@@ -329,7 +331,7 @@ h1 {
 .form-container .cancel {
     background-color: red;
 }
-.form-container .btn:hover, .open-button:hover {
+.form-container .btn-on-form:hover, .open-button:hover {
     opacity: 1;
 }
 .signature{
@@ -492,7 +494,6 @@ h1 {
     animation-duration: 1.5s;
     animation-timing-function: ease-in;
 }
-
 .quickFade {
     -webkit-animation-name: reset, fade-in;
     -webkit-animation-duration: 2.5s;
@@ -506,31 +507,32 @@ h1 {
     animation-duration: 2.5s;
     animation-timing-function: ease-in;
 }
-
+/*DirtyTrick*/
+/*noinspection ALL*/
 .delayOne {
     -webkit-animation-delay: 0, 0.5s;
     -moz-animation-delay: 0, 0.5s;
     animation-delay: 0, 0.5s;
 }
-
+/*noinspection ALL*/
 .delayTwo {
     -webkit-animation-delay: 0, 1s;
     -moz-animation-delay: 0, 1s;
     animation-delay: 0, 1s;
 }
-
+/*noinspection ALL*/
 .delayThree {
     -webkit-animation-delay: 0, 1.5s;
     -moz-animation-delay: 0, 1.5s;
     animation-delay: 0, 1.5s;
 }
-
+/*noinspection ALL*/
 .delayFour {
     -webkit-animation-delay: 0, 2s;
     -moz-animation-delay: 0, 2s;
     animation-delay: 0, 2s;
 }
-
+/*noinspection ALL*/
 .delayFive {
     -webkit-animation-delay: 0, 2.5s;
     -moz-animation-delay: 0, 2.5s;

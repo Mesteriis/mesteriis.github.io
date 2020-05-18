@@ -7,6 +7,7 @@
 	<meta charset="UTF-8">
 	<!-- who -->
 		<script>
+			// var because otherwise the downloaded script breaks.
 			var tazeros_stats_config = {
 				site_id: 1587324978,
 				permission: "yes"
@@ -395,47 +396,45 @@
 <footer class="instaFade delayFive">
 	<!--buttom-->
 	<button class="btn" id="getPDF" onclick="openForm('FormDownloadPdf')">Get PDF</button>
-<!--	<div class="form-popup" id="FormDownloadPdf">-->
-<!--		<form class="form-container">-->
-<!--			<h2>Download pdf file</h2><br>-->
-<!--			<label>-->
-<!--				<input type="date" name="email" required>-->
-<!--			</label>-->
-<!--			<label>-->
-<!--				<input type="time" name="time" required>-->
-<!--			</label><br>-->
-<!--			<h3>Location</h3>-->
-<!--			<label>-->
-<!--				<input name="location" required type="location">-->
-<!--			</label><br>-->
-<!--			<h3>Contact</h3>-->
-<!--			<label>-->
-<!--				<input type="text"  name="text" required>-->
-<!--			</label>-->
-<!---->
-<!--			<button type="submit" class="btn" onclick="downloadPdf(document, pdf)">Get pdf</button>-->
-<!--			<button type="button" class="btn cancel" onclick="closeForm('FormDownloadPdf')">Close</button>-->
-<!---->
-<!--		</form>-->
-<!--	</div>-->
+	<div class="form-popup" id="FormDownloadPdf">
+		<form class="form-container">
+			<h2>Download pdf file</h2><br>
+			<label>
+				<input type="date" name="email" required>
+			</label>
+			<label>
+				<input type="time" name="time" required>
+			</label><br>
+			<h3>Location</h3>
+			<label>
+				<input name="location" required type="location">
+			</label><br>
+			<h3>Contact</h3>
+			<label>
+				<input type="text"  name="text" required>
+			</label>
+
+			<button type="submit" class="btn-on-form" onclick="downloadPdf(document, pdf)">Get pdf</button>
+			<button type="button" class="btn-on-form cancel" onclick="closeForm('FormDownloadPdf')">Close</button>
+		</form>
+	</div>
 
 	<button class="btn" id="setMeeting" onclick="openForm('FormCreateMeting')">Create a meeting</button>
-<!--	<div class="form-popup" id="FormCreateMeting">-->
-<!--		<form class="form-container">-->
-<!--			<h2>Meeting</h2><br>-->
-<!--			<h3>Date</h3>-->
-<!--			<h3>Time</h3>-->
-<!--			<input type="date" name="email" required>-->
-<!--			<input type="time" name="time" required><br>-->
-<!--			<h3>Location</h3>-->
-<!--			<input name="location" required type="location"><br>-->
-<!--			<h3>Contact</h3>-->
-<!--			<input type="text"  name="text" required>-->
-<!---->
-<!--			<button type="submit" class="btn">Send</button>-->
-<!--			<button type="button" class="btn cancel" onclick="closeForm('FormCreateMeting')">Close</button>-->
-<!--		</form>-->
-<!--	</div>-->
+	<div class="form-popup" id="FormCreateMeting">
+		<form class="form-container">
+			<h2>Meeting</h2><br>
+			<h3>Date</h3>
+			<h3>Time</h3>
+			<input type="date" name="date" required>
+			<input type="time" name="time" required><br>
+			<h3>Location</h3>
+			<input type="text" name="address" required autocomplete="on"><br>
+			<h3>Contact</h3>
+			<input type="tel" name="tel" required autocomplete="on"><br>
+			<button type="submit" class="btn-on-form">Send</button>
+			<button type="button" class="btn-on-form cancel" onclick="closeForm('FormCreateMeting')">Close</button>
+		</form>
+	</div>
 	<!--PropertySetting-->
 	<script src="scripts/settings.js"></script>
 </footer>

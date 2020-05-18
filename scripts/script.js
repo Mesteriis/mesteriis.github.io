@@ -438,12 +438,33 @@ function saveEvent(document){
 
 function openForm(form) {
     document.getElementById(form).style.display = "block";
+    console.log(form);
+    hideBTN(form);
 }
 
 function closeForm(form) {
     document.getElementById(form).style.display = "none";
+    hideBTN(form);
 }
 
+function hideBTN(FormName) {
+    switch (FormName) {
+        case "FormDownloadPdf":{
+            const btn =  document.getElementById("getPDF").style.display
+            console.log(btn)
+            // document.getElementById("getPDF").style.display === "block" ? "none" : "block";
+            break;
+        }
+        case "FormCreateMeting": {
+            const btn =  document.getElementById("setMeeting").style.display
+            console.log(btn)
+            // document.getElementById("setMeeting").style.display === "block" ? "none" : "block";
+            break;
+        }
+        default:
+            break;
+    }
+}
 
 function switchView(){
     if (document.getElementById('fullLengthOfService').style.display === "")
