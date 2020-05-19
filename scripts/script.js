@@ -486,13 +486,11 @@ function saveEvent(){
     let title = document.getElementById('nameStr').innerText + ' - Встреча';
     cal_single.addEvent(title, nameJob, addressMeeting, dateMeeting, dateMeetingEnd);
     let x = cal_single.build();
-    console.log(x);
+    cal_single.download(title);
     let str = 'mailto:' + document.getElementById('myMail').innerText +'?subject='+nameJob+'&body=Приложите' +
         ' сохраненый файл встречи, я обезательно вам перезвоню по предоставленному контакту и подтвержу встречу, так ' +
-        'же вы можете сообщить мне какую то либо информаци, задать вопросы до встречи :)&attachment='+x
+        'же вы можете сообщить мне какую то либо информаци, задать вопросы до встречи :)&attachment='
         window.open(str);
-    // open.window()
-    // cal_single.download(title);
 }
 
 function switchView(){
