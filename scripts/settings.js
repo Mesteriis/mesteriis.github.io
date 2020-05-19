@@ -42,7 +42,11 @@ function resizeBTN() {
 // repaint
 resizeBTN()
 
-// connecting
-window.addEventListener('resize', function(){
-    resizeBTN();
-})
+
+
+
+
+
+
+
+

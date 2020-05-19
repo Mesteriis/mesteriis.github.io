@@ -1,3 +1,4 @@
+
 // Font into Base64 HelveticaThin.ttf
 const FontInBase64 = "AAEAAAAPAIAAAwBwRkZUTU5xNrYAAGI0AAAAHEdERUYC/QHSAABaPAAAADhHUE9T1NUA1wAAW0wAAAboR1NVQtWK2DQAAFp" +
     "0AAAA2E9TLzJriNOFAAABeAAAAGBjbWFwDFSlYQAABYAAAAI6Z2FzcP//AAMAAFo0AAAACGdseWYoupIIAAAJlAAAQ2BoZWFkA/Y09AAAAPwAAAA" +
@@ -410,7 +411,7 @@ function downloadPdf(document, pdf ) {
     pdf.line(_minWidth, yPos, _maxWidth, yPos) // line Note
 
     pdf.line(_minWidth, _maxHeight + 15, _maxWidth, _maxHeight + 15) // line Note end
-    const sing = "link to full resume: mesteriis.github.io"
+    const sing = "link to CV: mesteriis.github.io"
     pdf.text(sing,_maxWidth/2 - sing.length/2*3,_maxHeight + 25  )
 
     // for name file
@@ -421,49 +422,77 @@ function downloadPdf(document, pdf ) {
     let now = curr_date + ':' + curr_month + ":" + curr_year;
     let nameFileToSave = 'Mescheryakov-CV_' + now
     //save pdf
-    pdf.save(nameFileToSave)
-    // pdf.output('dataurlnewwindow'); // for edit
+    // pdf.save(nameFileToSave)
+    pdf.output('dataurlnewwindow'); // for edit
 }
 
-// AppointmentOfInterview
-// demo
-// cal_single = ics();
-// cal_single.addEvent('Best Day', 'This is the best day to demonstrate a single event.', 'New York', '11/12/1987', '11/12/1987');
+function checkDateIsWorking(dateUnixFormatted) {
 
-
-function saveEvent(document){
-    let cal_single = ics();
-    cal_single.addEvent('Best Day', 'This is the best day to demonstrate a single event.', 'New York', '11/12/1987', '11/12/1987');
-}
-
-function openForm(form) {
-    document.getElementById(form).style.display = "block";
-    console.log(form);
-    hideBTN(form);
-}
-
-function closeForm(form) {
-    document.getElementById(form).style.display = "none";
-    hideBTN(form);
-}
-
-function hideBTN(FormName) {
-    switch (FormName) {
-        case "FormDownloadPdf":{
-            const btn =  document.getElementById("getPDF").style.display
-            console.log(btn)
-            // document.getElementById("getPDF").style.display === "block" ? "none" : "block";
-            break;
-        }
-        case "FormCreateMeting": {
-            const btn =  document.getElementById("setMeeting").style.display
-            console.log(btn)
-            // document.getElementById("setMeeting").style.display === "block" ? "none" : "block";
-            break;
-        }
-        default:
-            break;
+    if (isNaN(Date.parse(dateUnixFormatted)) === true) {
+        return "date is not valid\nformat UTC or Date.now()"
     }
+
+    dateUnixFormatted = new Date(dateUnixFormatted).toISOString().slice(0, 10).replace(/-/g, '');
+
+    let urlServer = "https://isdayoff.ru/" + dateUnixFormatted;
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', urlServer, false);
+    xhr.send();
+    if (xhr.status !== 200) {
+        if (xhr.status === 400 && "100" === xhr.statusText){
+            console.log("date is not valid\nformat YYYYMMDD");
+            return "date is not valid\nformat YYYYMMDD";
+        }
+        if (xhr.status === 404 && "101" === xhr.statusText){
+            console.log("data not Found")
+            return "data not Found";
+        }
+        // Error, Output Example: 404: Not Found
+        console.log(xhr.status + ': ' + xhr.statusText);
+        // return xhr.status + ': ' + xhr.statusText;
+    } else {
+        return xhr.responseText === '0';
+    }
+}
+
+async function findNextWorkingDay(startDay) {
+    if (isNaN(Date.parse(startDay))) {
+        return "date is not valid\nformat UTC or Date.now()"
+    }
+    let date = new Date(startDay);
+
+    let count = 0;
+    while (true) {
+        date.setDate(date.getDate() + 1)
+        const run = await checkDateIsWorking(date);
+        if (run) return date;
+        count++;
+        if (count > 10) {
+            return NaN;
+        }
+    }
+    // return date;
+}
+
+function saveEvent(){
+    let cal_single = ics();
+    let nameJob = 'Собеседование на позицию ' + document.getElementById('nameJb').innerText;
+    let addressMeeting = document.getElementById('addressMeeting').value;
+    let dateMeeting = new Date(document.getElementById('datetimeMeeting').value);
+    let dateMeetingEnd = new Date(dateMeeting);
+
+    dateMeetingEnd.setHours(dateMeetingEnd.getHours()+1)
+
+    let title = document.getElementById('nameStr').innerText + ' - Встреча';
+    cal_single.addEvent(title, nameJob, addressMeeting, dateMeeting, dateMeetingEnd);
+    let x = cal_single.build();
+    console.log(x);
+    let str = 'mailto:' + document.getElementById('myMail').innerText +'?subject='+nameJob+'&body=Приложите' +
+        ' сохраненый файл встречи, я обезательно вам перезвоню по предоставленному контакту и подтвержу встречу, так ' +
+        'же вы можете сообщить мне какую то либо информаци, задать вопросы до встречи :)&attachment='+x
+        window.open(str);
+    // open.window()
+    // cal_single.download(title);
 }
 
 function switchView(){

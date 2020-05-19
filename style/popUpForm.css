@@ -1,0 +1,86 @@
+
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 45px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+}
+.form-container {
+    max-width: 372px;
+    min-width: 372px;
+    width: 372px;
+    padding: 10px;
+    background-color: white;
+}
+.form-container h3{
+    width: 50%;
+    padding: 3px;
+    border: none;
+    float: left;
+}
+.form-container input[type=datetime-local]{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    float: left;
+    font-size: 16px;
+}
+.string-on-form{
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+
+    border: none;
+    background: #f1f1f1;
+    float: left;
+    font-size: 18px;
+}
+.form-container input[type=radio]{
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    margin: 5px 7px 7px 0px;
+    border: none;
+    background: #f1f1f1;
+    float: left;
+    font-size: 13px;
+}
+.form-container .label-radio{
+    width: 90%;
+    padding: 0;
+    border: none;
+    float: right;
+}
+
+.form-container input[type=tel], .form-container input[type=text]{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+.form-container .btn-on-form {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+}
+.form-container .cancel {
+    background-color: red;
+}
+.form-container .btn-on-form:hover, .open-button:hover {
+    opacity: 1;
+}
+
+.radioBtn .notActive{
+    color: #3276b1;
+    background-color: #fff;
+}

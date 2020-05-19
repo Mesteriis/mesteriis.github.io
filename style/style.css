@@ -4,13 +4,37 @@
     --font-size: 16px;
     --bg-color-main-area:hsl(0, 0%, 95%);
     --max-width: 800px;
+    --sig-color: black;
+    --ff-head-lines: "Exo2-Regular", sans, sans-serif;
+    --ff-text: "Ubuntu", sans,sans-serif;
 }
+/*ForHeadlines*/
+@font-face {
+    font-family: "Exo2-Regular";
+    src: url("/fonts/Exo2.eot"); /* IE9 Compat Modes */
+    src: url("/fonts/Exo2.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("/fonts/Exo2.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("/fonts/Exo2.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: bold;
+    font-style: italic;
+}
+/*For Text*/
+@font-face {
+    font-family: "Ubuntu-Light";
+    src: url("/fonts/Ubuntu.eot"); /* IE9 Compat Modes */
+    src: url("/fonts/Ubuntu.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("/fonts/Ubuntu.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("/fonts/Ubuntu.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+}
+
 html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,
 samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,
 th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,
 mark,audio,video {
     border:0;
-    font:inherit;
+    font:var(--ff-text);
     font-size:100%;
     margin:0;
     padding:0;
@@ -21,7 +45,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 }
 html, body {
     background: var(--bg-color);
-    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    font-family: var(--ff-text);
     font-size: var(--font-size);
     color: var(--t-color);
 }
@@ -78,6 +102,7 @@ html, body {
     border-radius: 50px;
 }
 #PersonalData {
+    font-weight: bold;
     float: left;
 }
 #contactData {
@@ -107,6 +132,7 @@ section {
     border-bottom-right-radius: 10px;
 }
 .sectionTitle {
+    font-family: var(--ff-head-lines);
     float: left;
     width: 20%;
 }
@@ -205,6 +231,7 @@ h1 {
 }
 #fullLengthOfService h1{
     font-size: 16px;
+    font-weight: bold;
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hyphens: none;
@@ -219,10 +246,12 @@ h1 {
     hyphens: none;
 }
 #fullLengthOfService .sectionContent{
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: bold;
 
 }
 #fullLengthOfService .sectionContent p{
+    font-weight:normal;
     font-size: 14px;
 }
 
@@ -252,11 +281,11 @@ h1 {
     height: 45px;
     width: 45px;
     border-radius: 50%;
-    border: 1px solid #555;
+    border: 1px solid var(--bg-color-main-area);
 }
 /*ico*/
 .btn-circle-ico-pdf {
-    display: none;
+    /*display: none;*/
     background: url(../res/pic/ico-export_pdf.png) no-repeat center center ;
 }
 .btn-circle-ico-meeting{
@@ -274,7 +303,7 @@ h1 {
 }
 /*id*/
 #getPDF{
-    display: none;
+    /*display: none;*/
     bottom: 90px;
     right: 28px;
 }
@@ -283,261 +312,13 @@ h1 {
     right: 28px;
 }
 
-.form-popup {
-    display: none;
-    position: fixed;
-    bottom: 0;
-    right: 15px;
-    border: 3px solid #f1f1f1;
-    z-index: 9;
-}
-.form-container {
-    max-width: 350px;
-    padding: 10px;
-    background-color: white;
-}
-.form-container h3{
-     width: 50%;
-     padding: 3px;
-     border: none;
-     float: left;
- }
-.form-container input[type=date], .form-container input[type=time] {
-    width: 50%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    border: none;
-    background: #f1f1f1;
-    float: left;
-    font-size: 13px;
-}
-.form-container input[type=tel], .form-container input[type=text]{
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    border: none;
-    background: #f1f1f1;
-}
-.form-container .btn-on-form {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    margin-bottom:10px;
-    opacity: 0.8;
-}
-.form-container .cancel {
-    background-color: red;
-}
-.form-container .btn-on-form:hover, .open-button:hover {
-    opacity: 1;
-}
 .signature{
     margin-right: 10px;
-    color: hsl(40, 95%, 42%);
+    color: var(--sig-color);
     font-size: 10px;
     font-style: italic;
     text-align: right;
 
 }
 /***************************************************Footer END*********************************************************/
-
-/***************************************************Animation *********************************************************/
-@media all and (min-width: 602px) and (max-width: 800px) {
-    #avatar {
-        display: none;
-    }
-
-    .HSkills {
-        -moz-column-count:2;
-        -webkit-column-count:2;
-        column-count:2;
-    }
-    .SSkills {
-        -moz-column-count:2;
-        -webkit-column-count:2;
-        column-count:2;
-    }
-}
-@media all and (max-width: 601px) {
-    #cv {
-        width: 95%;
-        margin: 10px auto;
-        min-width: 280px;
-    }
-
-    #avatar {
-        display: none;
-    }
-
-    #PersonalData, #contactData, #header  {
-        float: none;
-        width: 100%;
-        text-align: center;
-    }
-
-    .sectionTitle, .sectionContent {
-        float: none;
-        width: 100%;
-    }
-
-    .sectionTitle {
-        margin-left: -2px;
-        font-size: 1.25em;
-    }
-
-    .HSkills, .SSkills{
-        -moz-column-count:2;
-        -webkit-column-count:2;
-        column-count:2;
-    }
-}
-@media all and (max-width: 480px) {
-    .mainDetails {
-        padding: 15px 15px;
-    }
-
-    section {
-        padding: 15px 0 0;
-    }
-
-    .main_area {
-        padding: 0 25px;
-    }
-
-
-    .HSkills, .SSkills {
-        -moz-column-count:1;
-        -webkit-column-count:1;
-        column-count:1;
-    }
-
-    #PersonalData h1 {
-        line-height: .8em;
-        margin-bottom: 4px;
-    }
-}
-@media print {
-    #cv {
-        width: 100%;
-    }
-}
-@-webkit-keyframes reset {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-@-webkit-keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-    40% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-@-moz-keyframes reset {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-@-moz-keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-    40% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-@keyframes reset {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-    40% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-.instaFade {
-    -webkit-animation-name: reset, fade-in;
-    -webkit-animation-duration: 1.5s;
-    -webkit-animation-timing-function: ease-in;
-
-    -moz-animation-name: reset, fade-in;
-    -moz-animation-duration: 1.5s;
-    -moz-animation-timing-function: ease-in;
-
-    animation-name: reset, fade-in;
-    animation-duration: 1.5s;
-    animation-timing-function: ease-in;
-}
-.quickFade {
-    -webkit-animation-name: reset, fade-in;
-    -webkit-animation-duration: 2.5s;
-    -webkit-animation-timing-function: ease-in;
-
-    -moz-animation-name: reset, fade-in;
-    -moz-animation-duration: 2.5s;
-    -moz-animation-timing-function: ease-in;
-
-    animation-name: reset, fade-in;
-    animation-duration: 2.5s;
-    animation-timing-function: ease-in;
-}
-/*DirtyTrick*/
-/*noinspection ALL*/
-.delayOne {
-    -webkit-animation-delay: 0, 0.5s;
-    -moz-animation-delay: 0, 0.5s;
-    animation-delay: 0, 0.5s;
-}
-/*noinspection ALL*/
-.delayTwo {
-    -webkit-animation-delay: 0, 1s;
-    -moz-animation-delay: 0, 1s;
-    animation-delay: 0, 1s;
-}
-/*noinspection ALL*/
-.delayThree {
-    -webkit-animation-delay: 0, 1.5s;
-    -moz-animation-delay: 0, 1.5s;
-    animation-delay: 0, 1.5s;
-}
-/*noinspection ALL*/
-.delayFour {
-    -webkit-animation-delay: 0, 2s;
-    -moz-animation-delay: 0, 2s;
-    animation-delay: 0, 2s;
-}
-/*noinspection ALL*/
-.delayFive {
-    -webkit-animation-delay: 0, 2.5s;
-    -moz-animation-delay: 0, 2.5s;
-    animation-delay:0, 2.5s;
-}
-
-/***************************************************Animation END*******************************************************/
 
