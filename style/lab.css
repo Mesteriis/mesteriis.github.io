@@ -1,1 +1,7 @@
 /*ForCodeTestingAndExperiments*/
+
+*{
+    max-width: 1170px;
+    min-width: 500px;
+    width: 100%;
+}
