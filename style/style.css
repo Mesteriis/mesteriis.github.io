@@ -50,7 +50,9 @@ html, body {
     color: var(--t-color);
 }
 
-* {box-sizing: border-box;}
+* {
+    box-sizing: border-box;
+}
 
 .clear {
     padding: 5px;
@@ -94,6 +96,7 @@ html, body {
     width: 12.5%;
     float: left;
     margin-right: 30px;
+
 }
 #avatar img {
     width: 100%;
